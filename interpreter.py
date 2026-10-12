@@ -1,4 +1,6 @@
-test_input: str = "++++++++++[->++++++++<]>+++.<+++++[->++++<]>++.++++.++.-.---------.--<++++++[->>++++++<<]>>----.<.<+++++[->>+++++<<]>>+." # Simone c:
+# test_input: str = "++++++++++[->++++++++<]>+++.<+++++[->++++<]>++.++++.++.-.---------.--<++++++[->>++++++<<]>>----.<.<+++++[->>+++++<<]>>+." # Simone c:
+
+input_value = input("Insert the brainfuck code: ")
 
 memory_cell: list = list(0 for i in range(5))
 head_position = 0
@@ -7,9 +9,9 @@ loop_end_pos = 0
 index = 0
 
 while True:
-    if(index >= len(test_input)): break
+    if(index >= len(input_value)): break
 
-    match test_input[index]:
+    match input_value[index]:
         case "+":
             try:
                 memory_cell[head_position] += 1
@@ -38,6 +40,8 @@ while True:
                 index = loop_start_pos
             else:
                 index = loop_end_pos
+        case _:
+            print("Unknown value, continuing...")
         
     index += 1
     # print(f"Current memory cell value: {memory_cell[head_position]}")
