@@ -44,6 +44,8 @@ while True:
                     index = loop_start_pos
                 else:
                     index = loop_end_pos
+            case ",":
+                memory_cell[head_position] = ord(input())
             case _:
                 print("Unknown value, continuing...")
             
